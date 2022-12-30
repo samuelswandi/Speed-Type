@@ -1,0 +1,60 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
+
+* {
+	background-color: #2f343f;
+	color: #646669;
+	font-family: "Lato", sans-serif;
+	margin: 0;
+}
+
+.app {
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+	height: 100vh;
+	justify-content: center;
+	row-gap: 20px;
+	text-align: center;
+}
+
+.description {
+    align-items: center;
+    border-radius: 0.5rem;
+    border: 2px solid #646669;
+    color: #2f343f;
+    column-gap: 10vw;
+    display: flex;
+    flex-direction: row;
+    height: 5vh;
+    justify-content: center;
+    max-width: 85vw;
+    padding-left: 4vw;
+    padding-right: 4vw;
+}
+
+#quote {
+	max-width: 85vw;
+}
+
+#input-field {
+	opacity: 0;
+	position: absolute;
+	z-index: -2;
+}
+
+#try-again-button {
+    border-radius: 0.5rem;
+    border: none;
+    color: #646669;
+    cursor: pointer;
+    padding: 1rem 2rem;
+    position: relative;
+    transition: .125s;
+    width: min-content;
+}
+
+#try-again-button:focus, #try-again-button:hover {
+    background-color: #fff;
+    color: #646669;
+    outline: 0;
+}
