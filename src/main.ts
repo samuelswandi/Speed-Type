@@ -4,7 +4,6 @@ import axios from "axios";
 var author = "";
 var mistakes = 0;
 
-// TODO
 var timer = 0;
 var maxTimer = 60;
 var timerLeft = maxTimer;
