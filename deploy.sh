@@ -4,7 +4,7 @@
 set -e
 
 # build
-npm run build
+# npm run build
 
 # navigate into the build output directory
 cd dist
@@ -17,7 +17,7 @@ echo > .nojekyll
 git init
 git checkout -B main
 git add -A
-git commit -m 'deploy'
+git commit -m 'deploy' --allow-empty
 
 git push -f git@github.com:samuelswandi/speedtype.git main:gh-pages
 
