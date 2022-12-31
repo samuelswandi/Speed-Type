@@ -13,10 +13,6 @@
     "vite": "^4.0.0"
   },
   "dependencies": {
-    "@chakra-ui/react": "^2.4.6",
-    "@emotion/react": "^11.10.5",
-    "@emotion/styled": "^11.10.5",
-    "axios": "^1.2.2",
-    "framer-motion": "^8.0.2"
+    "axios": "^1.2.2"
   }
 }

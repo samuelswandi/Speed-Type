@@ -3,8 +3,12 @@
 * {
 	background-color: #2f343f;
 	color: #646669;
-	font-family: "Lato", sans-serif;
+	font-family: "Lato", monospace;
 	margin: 0;
+}
+
+i {
+    background: transparent;
 }
 
 .app {
@@ -19,21 +23,13 @@
 
 .description {
     align-items: center;
-    border-radius: 0.5rem;
-    border: 2px solid #646669;
-    color: #2f343f;
-    column-gap: 10vw;
-    display: flex;
-    flex-direction: row;
-    height: 5vh;
-    justify-content: center;
-    max-width: 85vw;
-    padding-left: 4vw;
-    padding-right: 4vw;
+    font-size: 50px;
 }
 
 #quote {
-	max-width: 85vw;
+    font-variant-numeric: tabular-nums;
+    max-width: 85vw;
+    word-spacing: 4px;
 }
 
 #input-field {
@@ -58,3 +54,16 @@
     color: #646669;
     outline: 0;
 }
+
+.active {
+    /* animation: blinker 1s ease-in-out infinite; */
+    text-decoration: underline;
+    transition: text-decoration-color 300ms;
+}
+
+@keyframes blinker {
+    50% {
+      opacity: 0;
+    }
+  }
+  
