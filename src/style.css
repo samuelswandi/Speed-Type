@@ -11,7 +11,7 @@ i {
     background: transparent;
 }
 
-.app {
+#app {
 	align-items: center;
 	display: flex;
 	flex-direction: column;
@@ -19,6 +19,35 @@ i {
 	justify-content: center;
 	row-gap: 20px;
 	text-align: center;
+}
+
+#typing {
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	row-gap: 20px;
+}
+
+#report {
+	display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    row-gap: 20px;
+}
+
+.report-table th {
+    font-size: 25px;
+    width: 15vw;
+    padding: 0 20px 0 20px;
+}
+
+.report-table td,
+#wpm, #raw-wpm, #accuracy {
+    color: #DFD7AF;
+    font-size: 25px;
+    padding: 0 20px 0 20px;
 }
 
 .description {
@@ -38,7 +67,7 @@ i {
 	z-index: -2;
 }
 
-#try-again-button {
+#try-again-button, #next-button {
     border-radius: 0.5rem;
     border: none;
     color: #646669;
@@ -49,7 +78,8 @@ i {
     width: min-content;
 }
 
-#try-again-button:focus, #try-again-button:hover {
+#try-again-button:focus, #try-again-button:hover,
+#next-button:focus, #next-button:hover {
     background-color: #fff;
     color: #646669;
     outline: 0;

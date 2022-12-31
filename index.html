@@ -10,16 +10,36 @@
 		/>
 	</head>
 	<body>
-		<div class="app">
-			<div class="description">
-				<span id="timer"></span>
+		<div id="app">
+			<div id="typing">
+				<div class="description">
+					<span id="timer"></span>
+				</div>
+				<h2 id="quote" fontSize="25" pb="5"></h2>
+				<input id="input-field" />
+				<button id="try-again-button">
+					<i class="fa fa-refresh fa-lg"></i>
+				</button>
 			</div>
-			<h2 id="quote" fontSize="25" pb="5"></h2>
-			<input id="input-field" />
-			<button id="try-again-button">
-				<i class="fa fa-refresh fa-lg"></i>
-			</button>
+			<div id="report">
+				<table class="report-table">
+					<tr>
+						<th>Raw WPM</th>
+						<th>WPM</th>
+						<th>Accuracy</th>
+					</tr>
+					<tr>
+						<td><span id="raw-wpm"></span></td>
+						<td><span id="wpm"></span></td>
+						<td><span id="accuracy"></span></td>
+					</tr>
+				</table>
+				<button id="next-button">
+					<i class="fa fa-angle-right fa-lg"></i>
+				</button>
+			</div>
 		</div>
+		
 		<script type="module" src="/src/main.ts"></script>
 	</body>
 </html>

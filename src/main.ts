@@ -13,11 +13,18 @@ const randomQuoteURL =
 	"https://api.quotable.io/random?minLength=100&maxLength=140";
 const quote = <HTMLElement>document.getElementById("quote");
 const inputField = <HTMLInputElement>document.getElementById("input-field");
+
+const timerTag = <HTMLElement>document.getElementById("timer");
+const wpmTag = <HTMLElement>document.getElementById("wpm");
+const rawWpmTag = <HTMLElement>document.getElementById("raw-wpm");
+const accuracyTag = <HTMLElement>document.getElementById("accuracy");
+
 const tryAgainButton = <HTMLInputElement>(
 	document.getElementById("try-again-button")
 );
-
-const timerTag = <HTMLElement>document.getElementById("timer");
+const nextTestButton = <HTMLInputElement>(
+	document.getElementById("next-button")
+)
 
 const getRandomQuote = async () => {
 	quote.innerHTML = "";
@@ -90,44 +97,64 @@ const initTimer = () => {
 
 const countWpm = () => {
 	var totalKeyPressed = charIndex;
-	return (totalKeyPressed - mistakes )/ 5
+	var actualTime = (maxTimer - timerLeft)/60
+
+	return Math.round(((totalKeyPressed - mistakes)/ 5) / actualTime)
 }
 
 const countRawWpm = () => {
 	var totalKeyPressed = charIndex;
-	return totalKeyPressed / 5;
+	var actualTime = (maxTimer - timerLeft)/60
+	console.log(totalKeyPressed/5)
+	console.log(actualTime)
+	return Math.round((totalKeyPressed / 5) / actualTime);
 }
 
 const countAccuracy = () => {
 	var totalKeyPressed = charIndex;
 	var correctKeyPressed = totalKeyPressed - mistakes;
-	return (correctKeyPressed/totalKeyPressed) * 100;
+	return Math.round((correctKeyPressed/totalKeyPressed) * 100);
 }
 
 const gameFinished = () => {
-	getRandomQuote();
-	charIndex = 0;
-	clearInterval(timer);
+	document.getElementById("typing")!.style.display = "none";
+	document.getElementById("report")!.style.display = "flex";
 
-	inputField.value = "";
-	isTyping = false;
-	timerLeft = maxTimer;
-	timerTag.innerText = String(timerLeft);
+	wpmTag!.innerText = String(countWpm());
+	rawWpmTag!.innerText = String(countRawWpm());
+	accuracyTag!.innerText = String(countAccuracy()) + "%";
+
+	// getRandomQuote();
+	// charIndex = 0;
+	// clearInterval(timer);
+
+	// inputField.value = "";
+	// isTyping = false;
+	// timerLeft = maxTimer;
+	// timerTag.innerText = String(timerLeft);
 };
 
 const restartGame = () => {
+	document.getElementById("typing")!.style.display = "flex";
+	document.getElementById("report")!.style.display = "none";
+
 	getRandomQuote();
 	charIndex = 0;
 	clearInterval(timer);
 
+	mistakes = 0;
 	inputField.value = "";
 	isTyping = false;
 	timerLeft = maxTimer;
 	timerTag.innerText = String(timerLeft);
 }
 
+// document.getElementById("typing")!.style.display = "none";
+document.getElementById("report")!.style.display = "none";
 timerTag.innerText = String(timerLeft);
 inputField.addEventListener("input", initTyping);
+nextTestButton.addEventListener("click", restartGame);
+nextTestButton.addEventListener("keypress", restartGame);
 tryAgainButton.addEventListener("click", restartGame);
 tryAgainButton.addEventListener("keypress", restartGame);
 getRandomQuote();
