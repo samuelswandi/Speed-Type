@@ -1,7 +1,6 @@
 import "./style.css";
 import axios from "axios";
 
-var author = "";
 var mistakes = 0;
 
 var timer = 0;
@@ -29,7 +28,6 @@ const getRandomQuote = async () => {
 	quote.innerHTML = "";
 	await axios.get(randomQuoteURL).then((response: any) => {
 		var data = response.data.content;
-		author = response.data.author;
 
 		var id = 0;
 		if (quote.innerHTML == "") {
