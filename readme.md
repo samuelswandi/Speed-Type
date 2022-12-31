@@ -13,7 +13,6 @@
 
 
 ## Built With
----
 <img src="https://img.shields.io/badge/Typescript-3b2e5a?style=for-the-badge&logo=typescript" />
 <img src="https://img.shields.io/badge/Vite-B73BFE?style=for-the-badge&logo=vite&logoColor=FFD62E"/>
 <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" />
@@ -21,7 +20,6 @@
 
 
 ## Getting Started
----
 
 ### Prerequisites
 
@@ -46,7 +44,6 @@
    ```
 
 ## Roadmap
----
 
 - [ ] Add Additional Themes
 - [ ] Add ticking animation on key input
